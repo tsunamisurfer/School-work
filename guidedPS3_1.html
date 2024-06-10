@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guided Project</title>
+  </head>
+  <body>
+    <script>
+      class Player {
+      constructor(desiredNick){
+          this.nick = desiredNick
+          this.points = 0
+      }
+      greet() {
+          console.log('Hello, I am ${this.nick}')
+      }
+      play() {
+          let randomNum = Math.floor(Math.random() * 10)
+          this.points += randomNum
+          return `I gained ${randomNum} points and I am at ${this.points}`
+      }
+      }
+      const foo = new Player('Foo');
+
+
+      class VolumeRocker {
+      state = ''
+
+      print(){
+          console.log(`${this.state (${this.state.length})}`)
+      }
+      up(){
+      this.state += '❚'
+      this.print()
+      }
+      down(){
+        this.state = this.state.slice(0, this.state.length -1)
+        this.print()
+      }
+      }
+      const rocker = new VolumeRocker
+
+
+       //Challenge 3
+
+        class TrafficLight{
+          constructor(address){
+              this.address = address
+              this.color = ['red', 'green', 'orange']
+              this.color = this.colors[0]
+
+          }
+          print(){
+              console.log(`the color is ${this.color}`)
+          }
+          change(){
+            let currentIndex = this.colors.indexOF(this.color)
+            let nextIndex = currentIndex + 1  
+            if (nexIndex > 2) nexIndex = 0
+            this.color = this.colors[nextIndex]
+            this.print()
+
+        }
+        }
+
+          const light = new TrafficLight('NYC')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adv Functions GP</h1>
+ <Script>
+
+//Challenge 1 Loopin to achieve something
+
+
+let squareNumbsA = (nums) => {
+let result = []
+for (let idx in nums){
+    if (nums[idx]===13){
+        return '13 freaks me out!'
+    }
+    result.push(nums[indx] **2)
+}
+return result
+}
+
+squareNums([1,2,3,4,5])
+
+//2 looping with forEach
+let squareNumsB = nums => {
+    let result = []
+    nums.forEach(num => { 
+        result.push(num **2)
+    })
+    return result
+}
+
+// 3 - Obtaining a new array with map (Map needs to return something for each element creates a brand new array)
+let squareNumsC = nums => {
+let squared = nums.map(num => {
+    return num **2
+})
+return squared
+}
+
+//4-Filtering elements with filter (must be truthy)
+//[{ topic: 'JS' }, { topic: 'React' }, { topic: 'Node' }]
+
+let findJSArticles = articles => {
+    let filtered = articles.filter(article => {
+        return article.topic === 'JS'
+     })
+     return filtered
+}
+
+// 5 working with any number of arguments using spread
+let concatWords = (...words) => {
+    return words.join(' ')
+
+}
+
+ </Script>   
+</body>
+</html>
