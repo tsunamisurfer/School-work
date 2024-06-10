@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Destructuring Assignment</title>
+  </head>
+  <body>
+    <script>
+      /* let obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }; 
+
+let a = obj.a;
+let b = obj.b;
+let d = obj.d;
+To destructure an object, you will list the declaration (let or const) and the property names you want to extract between curly braces {} on the left-hand side of the assignment operator. On the right side of the assignment operator, you will use the name of the object that contains the properties you’d like to access.
+
+Here is an example of a destructured object:
+
+let { a, b, d } = obj; //destructuring the ‘a’, ‘b’, and ‘d’ properties from the obj object 
+console.log(a, b, d); // prints 1 2 4 */
+
+      // Pro Tip: The syntax on the left of the assignment operator is not an actual object, it just mimics its shape. This is called the destructuring binding pattern.
+
+      const person = {
+        name: "Alice",
+        age: 30,
+        city: "New York",
+      };
+
+      let { name, age, city } = person;
+      //console.log(person)
+
+      const student = {
+        id: 123,
+        firstName: "John",
+        lastName: "Doe",
+      };
+      let { id, firstName, lastName } = student;
+
+      const car = {
+        brand: "Toyota",
+        model: "Corolla",
+      };
+
+      let { brand, model } = car;
+
+      const movie = {
+        title: "Inception",
+        director: "Christopher Nolan",
+        releaseYear: 2010,
+        first_actor: {
+          name: "Leonardo DiCaprio",
+          character: "Cobb",
+        },
+        second_actor: {
+          name: "Joseph Gordon-Levitt",
+          character: "Arthur",
+        },
+      };
+
+      const { title: movieTitle } = movie;
+      const { director: movieDirector } = movie;
+      const { releaseYear: movieReleaseYear } = movie;
+      const {
+        first_actor: { name: leadActor },
+      } = movie;
+      const { first_actor: leadCharacter } = movie;
+
+      // let [first, second] = arr;
+      // console.log(first, second); // prints 1 2
+
+      /* 
+    PROBLEM 3: Declare an array called nums with the values [1, 2, 3, 4]. 
+    Use the spread operator to create a new array with the first element at the end of the array.
+    */
+
+      // const nums = [1,2,3,4];
+      // const slat = [...nums.slice(1), nums[0]];// Use the spread operator to create a new array with the first element at the end of the array
+      // console.log(slat) //// Output: [2, 3, 4, 1]
+
+      //   const nums = [1, 2, 3, 4];
+      //   const [firstNum, ...rest] = nums;
+      //   const newNums = [...rest, firstNum];
+      //   console.log(newNums);
+
+      //   let a = "hello";
+      //   let b = "world";
+
+      //   [a, b] = [b, a]; // performing the swap
+      //   console.log(b);
+
+      function person2() {
+        return { name: "Joe", age: 45 };
+      }
+      let { name2, age2 } = person2();
+
+      function fruits() {
+        return ["apple", "orange", "pear"];
+      }
+      const [fruit1, fruit2] = fruits(); // pulling the first couple of elements from the value of the invocation
+      console.log(fruit1, fruit2); // prints 'apple' 'orange'
+
+      /* 
+    PROBLEM 1: Declare a function called getPerson that returns an object with the name and age properties. 
+    Use destructuring assignment to extract the properties of the returned object into variables 
+    called personName and personAge.
+    */
+      function getPerson() {
+        return { name: "Troy", age: 21 };
+      }
+      let { name: personName, personAge } = getPerson();
+
+      /* 
+    PROBLEM 2: Decalre a function called getFullName that returns an object with firstName
+    and lastName properties. Use destructuring assignment to extract the properties of the
+    returned object into variables called firstName and lastName.
+    */
+
+      function getFullName() {
+        return { firstName: "Jeffery", lastName: "Williams" };
+      }
+      let { firstN, lastN } = getFullName();
+      /* 
+     /* 
+    PROBLEM 3: Declare a function called getRectangleDimensions that returns an object with
+    width and height properties. Use destructuring assignment to extract the properties of the
+    returned object into variables called width and height.
+    */
+
+      function getRectangleDimensions() {
+        return { width: 9, height: 6 };
+      }
+      let { width, height } = getRectangleDimensions();
+
+         /* 
+    PROBLEM 4: Declare a function called getCircleRadius that returns an object with
+    radius property. Use destructuring assignment to extract the properties of the
+    returned object into variables called radius.
+    */
+
+    function getCircleRadius() {
+      return {radius:45}
+    }
+  let {radius} = getCircleRadius() 
+
+    </script>
+  </body>
+</html>
