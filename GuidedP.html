@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Guided Project Module 3 JavaScript in the wild</title>
+</head>
+<body>
+<script>
+    //Deconstruction
+    let [first,second, third] = [1,2,3]
+
+   let {a,b,c} = {a: 1, b: 2, c: 3}
+
+   let users = [
+    {fname: 'Jane', lname: 'King'},
+    {fname: 'John', lname: 'Smith'},
+    {fname: 'Edd', lname: 'Murphy'},
+   ]
+    let [u1,u2,u3]= users
+    let [user1, ...rest] = users //saves remaining into variable called rest. 
+    
+    let {fname, lname} =u1 
+    console.log(fname, lname)// prints Jane King
+
+    //2 --other places we can use destructuring
+    function submit({fname, lname}){
+        console.log(fname,lname)
+    }
+    submit(user1) 
+
+    //3-Ternaries
+
+    let newConclusion =(typeof NaN === 'number') ? 'Js is strange' : 'Faith in JS restored'
+
+    //4 ternaries for return values
+
+    const followersInfoNew = count => {
+        return count === 1 ? "You have 1 follower": "you have ${count} followers"
+    }  
+
+    //6 -making shallow copies of objects
+    //[{id: 1, ended: "y"}, {id: 2, ended: "N"}, {id:3, ended: "N"}, {id:4 ended: "Y"}]
+    //[{ied: 1, ended: true}, {id: 2, ended: false}, {id: 3, ended: false}, {id: 4, ended: true}]
+
+const processTrialsImproved = tirals => {
+    return trails.map(trial =>{
+        return {...trial, ended: trial.ended === "Y"}
+    })
+}
+
+//7 asynchronus code
+window.onclick = function(){
+    console.log('you clicked the window')
+}
+
+setTimeout(() => {
+    console.log('You will see this after 2 secs')
+}, 2000)
+
+</script>    
+</body>
+</html>
